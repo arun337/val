@@ -5,6 +5,7 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -12,6 +13,7 @@ body {
     justify-content: center;
     height: 100vh;
 }
+
 .btn {
     padding: 15px 30px;
     font-size: 20px;
@@ -21,9 +23,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
 }
-.hidden {
-    display: none;
-}
+
 .rose-shower {
     position: fixed;
     top: 0;
@@ -32,6 +32,7 @@ body {
     height: 100%;
     pointer-events: none;
 }
+
 .rose {
     position: absolute;
     width: 30px;
@@ -40,15 +41,18 @@ body {
     background-size: contain;
     animation: fall 5s linear infinite;
 }
+
 @keyframes fall {
     0% { transform: translateY(-10vh) rotate(0); }
     100% { transform: translateY(100vh) rotate(360deg); }
 }
+
 .timeline {
     display: none;
     padding: 50px 10px;
     background-color: white;
 }
+
 .message {
     display: none;
     font-size: 24px;
