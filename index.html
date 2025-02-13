@@ -4,7 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Valentine's Day</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffebee;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        .rose-shower {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .rose {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url('') no-repeat center;
+            background-size: contain;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        .timeline {
+            display: none;
+            padding: 50px 10px;
+            background-color: white;
+        }
+        .message {
+            display: none;
+            font-size: 24px;
+            color: #e91e63;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -19,6 +77,23 @@
         <h2>Happy Valentine's Day, My Love! ❤️</h2>
         <p>You make my world brighter every day. I love you! 💖</p>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function startSurprise() {
+            document.querySelector('.btn').style.display = 'none';
+            for (let i = 0; i < 20; i++) {
+                let rose = document.createElement('div');
+                rose.classList.add('rose');
+                rose.style.left = Math.random() * 100 + 'vw';
+                rose.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                document.getElementById('roseShower').appendChild(rose);
+            }
+            setTimeout(() => {
+                document.getElementById('timeline').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('message').style.display = 'block';
+                }, 3000);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
