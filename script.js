@@ -1,5 +1,6 @@
 function startSurprise() {
     document.querySelector('.btn').style.display = 'none';
+
     for (let i = 0; i < 20; i++) {
         let rose = document.createElement('div');
         rose.classList.add('rose');
@@ -7,6 +8,7 @@ function startSurprise() {
         rose.style.animationDuration = (Math.random() * 2 + 3) + 's';
         document.getElementById('roseShower').appendChild(rose);
     }
+
     setTimeout(() => {
         document.getElementById('timeline').style.display = 'block';
         setTimeout(() => {
